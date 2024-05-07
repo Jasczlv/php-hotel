@@ -51,15 +51,35 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="card d-flex justify-content-center align-items-center">
-        <?php 
-         foreach($hotels as $index => $hotel){
-            foreach($hotel as $hotel_dati){
-                echo "<span>" . $hotel_dati . "</span>". "<br>";
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nome Hotel</th>
+                <th>Descrizione</th>
+                <th>parcheggio</th>
+                <th>voto</th>
+                <th>distanza centro</th>
+            </tr>
+        </thead>
+        <tbody>
+                <?php 
+            foreach($hotels as $index => $hotel){
+                echo "<tr>"; 
+                foreach($hotel as $hotel_dati){
+                    echo "<td>" . $hotel_dati . "</td>";
 
+                } 
+                echo "</tr>";
             }
-         }
-        ?>
-    </div>
+            ?>
+        </tbody>
+        
+    </table>
 </body>
 </html>
+
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
